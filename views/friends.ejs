@@ -1,0 +1,17 @@
+<%- include('templates/header') -%>
+    <h1>My friend list</h1>
+    <ul>
+        <% friends.forEach(function(friend){ %>
+            <li> <%= friend %> </li>
+        <% }); %>
+    </ul>
+    
+    <form action="/addfriend" method="POST">
+        <input type="text" name="newfriend" placeholder="Add new friend name">
+        <button class="btn bn-info">Add</button>
+    </form>
+    <form action="/removefriend" method="POST">
+        <input type="text" name="oldfriend" placeholder="Remove friend">
+        <button class="btn bn-info">Remove</button>
+    </form>
+<%- include('templates/footer') -%>
